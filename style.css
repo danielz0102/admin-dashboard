@@ -34,11 +34,28 @@ aside {
 
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 48px;
+}
+
+.header, .navbar li {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  gap: 16px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .navbar li {
-  
+  font-weight: 600;
+  font-size: 1.1rem;
+  gap: 24px;
 }
 
 .navbar-icon {
