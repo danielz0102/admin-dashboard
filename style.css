@@ -67,7 +67,7 @@ header {
   background-color: #fff;
   color: #000;
   padding: 12px 48px;
-  box-shadow: 7px 2px 5px 1px #cdcbcb;
+  box-shadow: 3px 2px 5px 1px #cdcbcb;
   z-index: 1;
   
   grid-column: 2 / 3;
@@ -142,7 +142,6 @@ header {
   line-height: 1.5;
 }
 
-
 .buttons {
   display: flex;
   align-items: center;
@@ -158,49 +157,103 @@ header {
 }
 
 /* MAIN */
-
 main {
-  background-color: #e2e8f0;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   color: #000;
+  background-color: #e2e8f0;
+  padding: 24px 32px 24px 24px;
 }
 
 #projects {
-  grid-column: 1 / 2;
+  min-width: 500px;
+  flex: 1;
+}
+
+#projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr));
-  grid-template-rows: 50px repeat(auto-fill, 200px);
-  padding-left: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(200px, 1fr);
+  margin-top: 16px;
+}
+
+main, #projects-grid {
   gap: 16px;
 }
 
-#projects > .title {
-  grid-column: 1 / 3;
-  display: flex;
-  align-items: flex-end;
+.project-card, .announcements-card, .trending-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px #cdd2d9;
 }
 
 .project-card {
-  background: linear-gradient(to right, #f0b429 0%, #f0b429 2%, #fff 2%);
-  border-radius: 8px;
+  background: linear-gradient(to right, #f0b429, #f0b429 2%, #fff 2%);
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  padding: 32px;
-}
-
-.icons {
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 16px;
+  gap: 4px;
 }
 
 .card-text {
   color: #636363;
 }
 
+.card-text--smaller {
+  font-size: 0.8rem;
+}
+
+.options {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
 aside {
-  grid-column: 2 / 3;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* #projects, aside {
+  border: 1px dotted rgb(243, 130, 130);
+} */
+
+aside .title {
+  margin-bottom: 16px;
+}
+
+.announcements-card {
+  padding: 32px;
+}
+
+.announcements-card .title--smaller {
+  margin-bottom: 4px;
+}
+
+hr {
+  margin-block: 16px;
+  border: none;
+  border-top: 1px solid #d2d2d2;
+}
+
+.trending-card {
+  padding: 16px;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-row:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.user-info :first-child {
+  margin-bottom: 4px;
 }
